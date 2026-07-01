@@ -1,0 +1,55 @@
+# Ignora file di progetto e metadata Visual Studio
+*.sln
+*.csproj
+*.vbproj
+*.fsproj
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.csproj.user
+.project
+
+# File utente e temporanei di Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Output di build
+[Bb]in/
+[Oo]bj/
+[Bb]uild/
+publish/
+
+# NuGet / pacchetti
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Rider / ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# VS Code settings (opzionale)
+.vscode/
+.settings/
+
+# IIS Express
+IISExpress/
+applicationhost.config
+
+# Log, temp e vari
+*.log
+*.tmp
+*.cache
+*.bak
+
+# Node (se presente)
+node_modules/
+npm-debug.log*
+
+# Environment files
+*.env
+.env.*

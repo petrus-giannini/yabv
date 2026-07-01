@@ -1,0 +1,24 @@
+@CHARSET "utf-8";
+
+
+ul.issue-list {
+	list-style: none;
+	padding: 2px;
+}
+
+ul.issue-list li {
+	
+}
+
+ul.issue-list li.error {
+	color: rgb(220, 0, 0);
+}
+
+div.emipagina {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.hidden {
+	display: none;
+}

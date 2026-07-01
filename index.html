@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Liste BCR e BV</title>
+	<link rel="stylesheet" type="text/css" href="./static/main.css">
+	<link rel="stylesheet" type="text/css" href="./static/bootstrapitalia.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script>
+		window.__PUBLIC_PATH__ = './bootstrap-italia-1.6.3/fonts'
+	</script>
+	<script type="text/javascript" src="./bootstrap-italia-1.6.3/js/bootstrap-italia.bundle.min.js"></script>
+	<script type="text/javascript" src="./static/local.js"></script>
+</head>
+<body>
+<header class="it-header-wrapper it-header-sticky it-shadow" role="banner" id="header-dpc">
+	<div class="it-header-slim-wrapper">
+		<div class="container">
+			<div class="it-header-slim-wrapper-content">
+				<a class="d-block navbar-brand" href="http://www.governo.it/" title="Governo Italiano Presidenza del Consiglio dei Ministri" target="_blank" rel="noreferrer">Governo Italiano</a>
+			</div>
+		</div>
+	</div>
+	<div class="it-nav-wrapper">
+		<div class="it-header-center-wrapper">
+			<div class="container">
+				<div class="it-header-center-content-wrapper">
+					<div class="it-brand-wrapper">
+						<ul class="list-inline">
+							<li class="list-inline-item">
+								<a class="navbar-brand">
+									<img src="./static/logo-dpc-italia.svg" alt="Logo del Dipartimento della Protezione Civile" class="brand-logo">
+								</a>
+							</li>
+						</ul>
+						<div>
+							<h2>
+								<a title="Dipartimento della Protezione Civile" class="">
+									<span>Dipartimento</span> della Protezione Civile
+								</a>
+							</h2>
+							<h3>Presidenza del Consiglio dei Ministri</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<div id="popupPanel" class="hidden"></div>
+<main role="main" id="main">
+   <section class="container">
+      <h1>Liste dei Bollettini pubblicati</h1>
+      <div class="px-custom">
+		<div class="row in-evidenza">
+			<div class="col-12 col-md-4">
+				<article class="card-wrapper card-space">
+					<div class="card card-img">
+						<div class="img-responsive-wrapper">
+							<div class="img-responsive">
+								<figure class="img-wrapper">
+									<figcaption class="sr-only">bollettino criticità</figcaption>
+									<a href="#" onclick="go('bcr')" class="">
+										<img alt="bollettino criticit�" src="./static/criticita_800x533_0.jpg">
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								<a href="#" onclick="go('bcr')">Bollettino di Criticità</a>
+							</h3>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="col-12 col-md-4">
+				<article class="card-wrapper card-space">
+					<div class="card card-img">
+						<div class="img-responsive-wrapper">
+							<div class="img-responsive">
+								<figure class="img-wrapper">
+									<figcaption class="sr-only">bollettino vigilanza</figcaption>
+									<a href="#"  onclick="go('bv')"class="">
+										<img alt="bollettino vigilanza" src="./static/vigilanza_800x533_0.jpg">
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								<a href="#" onclick="go('bv')">Bollettino di Vigilanza Meteorologica Nazionale</a>
+							</h3>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+		<div class="row" id="theListDiv">
+			
+			
+		</div>
+      </div>
+   </section>
+</main>
+<script type="text/javascript">
+	var w = document.getElementById("waiting");
+	if (w) w.remove();
+</script>
+</body>
+</html>						
