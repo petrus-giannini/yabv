@@ -11,12 +11,14 @@ const Constants = {
 		BCR : {
 			REPO_URL  : "https://api.github.com/repos/pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica/git/trees/master:files",
 			DOWNLOAD_URL : "https://raw.githubusercontent.com/pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica/master/files/",
-			MAP_URL : "https://servizio-mappe.protezionecivile.it/#/view/dashboard?x=13.0&y=41.5&zoom=6.5&basemap=GOOGLE_SATELLITE&appname=Bollettino%20di%20Criticità"
+			MAP_URL : "https://servizio-mappe.protezionecivile.it/#/view/dashboard?x=13.0&y=41.5&zoom=6.5&basemap=GOOGLE_SATELLITE&appname=Bollettino%20di%20Criticità",
+			RENDER_URL : "https://yawr.petrus-giannini.deno.net/?width=700&height=900&url=https://servizio-mappe.protezionecivile.it/print.html?file=https://raw.githubusercontent.com/pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica/master/files/"
 		},
 		BV  : {
 			REPO_URL   : "https://api.github.com/repos/pcm-dpc/DPC-Bollettini-Vigilanza-Meteorologica/git/trees/master:files",
 			DOWNLOAD_URL : "https://raw.githubusercontent.com/pcm-dpc/DPC-Bollettini-Vigilanza-Meteorologica/master/files/",
-			MAP_URL  : "https://servizio-mappe.protezionecivile.it/#/view/dashboard?x=13.0&y=41.5&zoom=6.5&basemap=OPEN_STREET_MAP&appname=Bollettino%20di%20Vigilanza"
+			MAP_URL  : "https://servizio-mappe.protezionecivile.it/#/view/dashboard?x=13.0&y=41.5&zoom=6.5&basemap=OPEN_STREET_MAP&appname=Bollettino%20di%20Vigilanza",
+			RENDER_URL : "https://yawr.petrus-giannini.deno.net/?width=700&height=900&url=https://servizio-mappe.protezionecivile.it/print.html?file=https://raw.githubusercontent.com/pcm-dpc/DPC-Bollettini-Vigilanza-Meteorologica/master/files/"
 		}
 	}	
 };
@@ -97,6 +99,8 @@ function reduceList(gottenList, repo){
 					{label: "SHP", link: Constants.LINK[repo].DOWNLOAD_URL + "shp/" + theDateString + ".zip"},
 					{label: "XML", link: Constants.LINK[repo].DOWNLOAD_URL + "xml/" + theDateString + ".zip"},
 					{label: "ALL", link: Constants.LINK[repo].DOWNLOAD_URL + "all/" + theDateString + ".zip"},
+					{label: "Preview oggi",   link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
+					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json%26fase=tomorrow"},
 				]
 			} else {
 				theDataLinks = [
@@ -104,6 +108,8 @@ function reduceList(gottenList, repo){
 					{label: "SHP", link: Constants.LINK[repo].DOWNLOAD_URL + "shp/" + theDateString + "_shp.zip"},
 					{label: "XML", link: Constants.LINK[repo].DOWNLOAD_URL + "xml/" + theDateString + ".zip"},
 					{label: "ALL", link: Constants.LINK[repo].DOWNLOAD_URL + "all/" + theDateString + "_all.zip"},
+					{label: "Preview oggi",   link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
+					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json%26fase=tomorrow"},
 				]
 			}
 					
