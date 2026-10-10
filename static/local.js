@@ -100,7 +100,13 @@ function reduceList(gottenList, repo){
 					{label: "XML", link: Constants.LINK[repo].DOWNLOAD_URL + "xml/" + theDateString + ".zip"},
 					{label: "ALL", link: Constants.LINK[repo].DOWNLOAD_URL + "all/" + theDateString + ".zip"},
 					{label: "Preview oggi",   link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
-					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json%26fase=tomorrow"},
+					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
+					{label: "geojson oggi", link: Constants.LINK[repo].DOWNLOAD_URL +  + "geojson/" + theDateString + "_today.json"},
+					{label: "geojson domani", link: Constants.LINK[repo].DOWNLOAD_URL +  + "geojson/" + theDateString + "_tomorrow.json"},
+					{label: "geojson dopodomani", link: Constants.LINK[repo].DOWNLOAD_URL +  + "geojson/" + theDateString + "_aftertomorrow.json"},
+					{label: "topojson oggi", link: Constants.LINK[repo].DOWNLOAD_URL +  + "topojson/" + theDateString + "_today.json"},
+					{label: "topojson domani", link: Constants.LINK[repo].DOWNLOAD_URL +  + "topojson/" + theDateString + "_tomorrow.json"},
+					{label: "topojson dopodomani", link: Constants.LINK[repo].DOWNLOAD_URL +  + "topojson/" + theDateString + "_aftertomorrow.json"},
 				]
 			} else {
 				theDataLinks = [
