@@ -92,42 +92,56 @@ function reduceList(gottenList, repo){
 				})
 			} 
 			
-			let theDataLinks = [];
+			let 
+				theDataLinks = [],
+				thePreviewLinks = [],
+				theGeoTopoJsonLinks = [];
+
 			if (repo == "BV") {
 				theDataLinks = [
 					{label: "PDF", link: Constants.LINK[repo].DOWNLOAD_URL + "pdf/" + theDateString + ".zip"},
 					{label: "SHP", link: Constants.LINK[repo].DOWNLOAD_URL + "shp/" + theDateString + ".zip"},
 					{label: "XML", link: Constants.LINK[repo].DOWNLOAD_URL + "xml/" + theDateString + ".zip"},
 					{label: "ALL", link: Constants.LINK[repo].DOWNLOAD_URL + "all/" + theDateString + ".zip"},
+				];
+				thePreviewLinks = [
 					{label: "Preview oggi",   link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
 					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
+				];
+				theGeoTopoJsonLinks = [
 					{label: "geojson oggi", link: Constants.LINK[repo].DOWNLOAD_URL +        "geojson/"  + theDateString + "_oggi.json"},
 					{label: "geojson domani", link: Constants.LINK[repo].DOWNLOAD_URL +      "geojson/"  + theDateString + "_domani.json"},
 					{label: "geojson dopodomani", link: Constants.LINK[repo].DOWNLOAD_URL +  "geojson/"  + theDateString + "_dopodomani.json"},
 					{label: "topojson oggi", link: Constants.LINK[repo].DOWNLOAD_URL +       "topojson/" + theDateString + "_oggi.json"},
 					{label: "topojson domani", link: Constants.LINK[repo].DOWNLOAD_URL +     "topojson/" + theDateString + "_domani.json"},
 					{label: "topojson dopodomani", link: Constants.LINK[repo].DOWNLOAD_URL + "topojson/" + theDateString + "_dopodomani.json"},
-				]
+				];
 			} else {
 				theDataLinks = [
 					{label: "PDF", link: Constants.LINK[repo].DOWNLOAD_URL + "pdf/" + theDateString + ".zip"},
 					{label: "SHP", link: Constants.LINK[repo].DOWNLOAD_URL + "shp/" + theDateString + "_shp.zip"},
 					{label: "XML", link: Constants.LINK[repo].DOWNLOAD_URL + "xml/" + theDateString + ".zip"},
 					{label: "ALL", link: Constants.LINK[repo].DOWNLOAD_URL + "all/" + theDateString + "_all.zip"},
+				];
+				thePreviewLinks = [
 					{label: "Preview oggi",   link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
-					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json%26fase=tomorrow"},
+					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
+				];
+				theGeoTopoJsonLinks = [
 					{label: "geojson oggi", link: Constants.LINK[repo].DOWNLOAD_URL +        "geojson/"  + theDateString + "_today.json"},
 					{label: "geojson domani", link: Constants.LINK[repo].DOWNLOAD_URL +      "geojson/"  + theDateString + "_tomorrow.json"},
 					{label: "topojson oggi", link: Constants.LINK[repo].DOWNLOAD_URL +       "topojson/" + theDateString + "_today.json"},
 					{label: "topojson domani", link: Constants.LINK[repo].DOWNLOAD_URL +     "topojson/" + theDateString + "_tomorrow.json"},
-				]
+				];
 			}
 					
 			return {
 				name: b.path,
 				datestring: theDateString, 
 				link: theLinks,
-				datalink: theDataLinks
+				datalink: theDataLinks,
+				previewLinks: thePreviewLinks,
+				geoTopoLinks: theGeoTopoJsonLinks,
 			};
 		}
 	}).filter(i => i!=null);
@@ -143,17 +157,35 @@ function renderListPage(repo, list){
 		html += '</div>';
 		
 		i.link.forEach(l => {
-			html += '<div class="col-2">';
+			html += '<div class="col-2 pill">';
 			html += "<a href='" + l.link + "'>" + l.label + "</a><br />";
 			html += '</div>';
 		})
-		
+
+		html += '</div><div class="row">';
+
 		i.datalink.forEach(l => {
-			html += '<div class="col-1">';
+			html += '<div class="col-2 pill">';
 			html += "<a href='" + l.link + "'>" + l.label + "</a><br />";
 			html += '</div>';
 		})
-		
+
+		html += '</div><div class="row">';
+
+		i.previewLinks.forEach(l => {
+			html += '<div class="col-2 pill">';
+			html += "<a href='" + l.link + "'>" + l.label + "</a><br />";
+			html += '</div>';
+		})
+
+		html += '</div><div class="row">';
+
+		i.geoTopoLinks.forEach(l => {
+			html += '<div class="col-2 pill">';
+			html += "<a href='" + l.link + "'>" + l.label + "</a><br />";
+			html += '</div>';
+		})
+
 		html += '</div></div>';
 	}); 
 	$('#theListDiv').html(html);

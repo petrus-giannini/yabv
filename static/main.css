@@ -19,6 +19,12 @@ div.emipagina {
 	vertical-align: top;
 }
 
+div.pill {
+	height: auto;
+	border: 1px solid gray;
+	border-radius: .2em;
+}
+
 .hidden {
 	display: none;
 }
