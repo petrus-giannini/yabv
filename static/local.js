@@ -106,7 +106,7 @@ function reduceList(gottenList, repo){
 				];
 				thePreviewLinks = [
 					{label: "Preview oggi",   link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
-					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
+					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json%26fase=tomorrow"},
 				];
 				theGeoTopoJsonLinks = [
 					{label: "geojson oggi", link: Constants.LINK[repo].DOWNLOAD_URL +        "geojson/"  + theDateString + "_oggi.json"},
@@ -125,7 +125,7 @@ function reduceList(gottenList, repo){
 				];
 				thePreviewLinks = [
 					{label: "Preview oggi",   link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
-					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json"},
+					{label: "Preview domani", link: Constants.LINK[repo].RENDER_URL +  theDateString + ".json%26fase=tomorrow"},
 				];
 				theGeoTopoJsonLinks = [
 					{label: "geojson oggi", link: Constants.LINK[repo].DOWNLOAD_URL +        "geojson/"  + theDateString + "_today.json"},
